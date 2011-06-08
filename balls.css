@@ -1,0 +1,188 @@
+/*
+--------------------------------------------------------
+Copyright 2011, Dejan Stjepanovic <stj.dejan@gmail.com>
+-------------------------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th, td, caption {
+  font-weight: normal;
+  vertical-align: middle;
+  text-align: left;
+}
+html {
+	height: 100%;
+}
+body {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	font: 12px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+	margin: 0 auto;
+	color: #162A45;
+	cursor: default;
+	background-color: #D9E6F3;
+	position: relative;
+	height: 100%;
+}
+#level-selector {
+	z-index: 8888;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#level-selector-mask {
+	width: 100%;
+	height: 100%;
+	z-index: 7777;
+	background-color: #000;
+	opacity: .5;
+	position: absolute;
+	top: 0;
+}
+#level-selector .cont {
+	width: 700px;
+	height: 200px;
+	margin: 90px auto 0;
+	z-index: 9999;
+	border: 2px solid #D9E6F3;
+	background-color: #B5C0CD;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9EAEC0), to(#C4D6E9));
+	-webkit-border-radius: 10px;
+	position: relative;
+	text-align: center;
+}
+#level-selector .cont .title {
+	padding: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: 2px 1px 2px #fff;
+}
+#level-selector .cont .level {
+	width: 155px;
+	height: 80px;
+	float: left;
+	padding: 10px 0;
+	margin: 10px 37px 0;
+	color: #2D5888;
+	font-size: 55px;
+	font-weight: bold;
+	text-shadow: 2px 1px 2px #fff;
+	border: 2px solid #8BA7C4;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C7D6E8), to(#7194BC));
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px #fff;
+}
+#level-selector .cont .level:hover {
+	text-shadow: 2px 1px 2px #fff;
+	border: 2px solid #7194BC;
+}
+#level-selector .cont .level:active {
+	text-shadow: 2px 1px 2px #fff;
+	border: 2px solid #8BA7C4;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7194BC), to(#C7D6E8));
+}
+#container {
+	width: 800px;
+	padding: 20px;
+	margin: 0 auto;
+	border: 2px solid #5778A1;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C7D6E8), to(#7194BC));
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #ccc;
+}
+#main-window {
+	height: 400px;
+	border: 2px solid #5778A1;
+	position: relative;
+	background-color: #B5C0CD;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9EAEC0), to(#C4D6E9));
+	-webkit-border-radius: 10px;
+}
+.status-table {
+	margin-top: 20px;
+}
+.status-table .level, 
+.status-table .timer,
+.status-table .speed,
+.status-table .balls-count,
+.status-table .score,
+.status-table .score-pps {
+	padding: 2px 10px 0 10px;
+	font-size: 14px;
+	line-height: 25px;
+	text-shadow: 1px 1px 1px #ccc;
+	text-align: center;
+}
+.status-table.speed,
+.status-table .score {
+	width: 90px;
+}
+.status-table.score {
+	padding: 2px 0px 0 10px;
+}
+.status-table .level .value,
+.status-table .timer .value,
+.status-table .speed .value,
+.status-table .balls-count .value,
+.status-table .score .value,
+.status-table .score-pps .value {
+	font-weight: bold;
+	font-size: 20px;
+}
+#control-table.game-over .score .value,
+#control-table.game-over .timer .value,
+#run.start {
+	color: #9F2E2E;
+}
+.angry-ball, #try-to-escape {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.angry-ball {
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(red), to(#AD2929));
+	-webkit-border-radius: 10px;
+}
+#try-to-escape {
+	width: 20px;
+	height: 20px;
+	top: 323px;
+	left: 640px;
+	background-color: green;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2BA72B), to(green));
+	-webkit-border-radius: 5px;
+}
+#run, #change-level {
+	width: 85px;
+	padding: 15px 10px;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+	border: 1px solid #304867;
+	background-color: #ddd;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#85A7D2), to(#527198));
+	text-shadow: 1px 1px 1px #ccc;
+	-webkit-border-radius: 15px;
+	float: left;
+}
+#run.enable:active, #change-level.enable:active {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#527198), to(#85A7D2));
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}	
